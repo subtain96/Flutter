@@ -1,13 +1,23 @@
 import 'package:flutter/material.dart';
+import 'package:project_video/pages/first_page.dart';
+import 'package:project_video/pages/second_page.dart';
 
-void main(){
-  runApp (const myApp());
+void main() {
+  runApp(MyApp());
 }
-class myApp extends StatelessWidget {
-  const myApp({super.key});
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp();
+    return  MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: FirstPage(),
+      routes: {
+        '/firstpage' : (context) => FirstPage(),
+        '/secondpage' :(context) => SecondPage(),
+      },
+    );
   }
 }
